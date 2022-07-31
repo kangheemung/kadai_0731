@@ -1,0 +1,23 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+    <% if session[:user_id] %>
+        <%= form_for :post, url: "/posts/create" do |f| %>
+            <%= f.label :title%>
+            <%= f.text_field :title %>
+            <%= f.label :content%>
+            <%= f.password_field :content%>
+            <%= f.submit "post" %>
+        <% end %>
+       
+       <% @posts.each do |post| %>
+        <li><a href='posts/:id/:edit'> <%= post.title %>を編集|</a>
+         
+        <% end %>
+        <% @users.each do |user| %>
+        <%= user.email %></li>
+        <% end %>
+        
+
+    <% else %>
+    <a href="/sessions/new">ログインしてください。</a>
+    <% end %>

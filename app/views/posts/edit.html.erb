@@ -1,0 +1,8 @@
+ 
+        <%= form_for @post,url "/posts/update" %>
+            <%= f.label :title%>
+            <%= f.text_field :title %>
+            <%= f.label :content%>
+            <%= f.password_field :content %>
+            <%= f.submit "編集" %>
+        <% end %>
