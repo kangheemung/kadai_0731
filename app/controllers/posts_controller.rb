@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
     def index
       @posts = Post.all
-      @users = User.all
+     
     end
   
     def new
@@ -13,8 +13,10 @@ class PostsController < ApplicationController
       @post = Post.new(
            title: params[:post][:title],
            content: params[:post][:content]
+          
           )
            
+          
         if @post.save
             redirect_to'/'
            
@@ -23,16 +25,16 @@ class PostsController < ApplicationController
         end
     end
      def edit
-      @post = Post.find(params[:id])
+      
+      @post = Post.find_by(params[:id])
      end
     def update
-        @post = Post.find(params[:id])
-        @post.update(post_params)
-        if post.save
-            redirect_to("/")
-        else
-          render("posts/edit")
-        end  
+         @post=Post.find_by(id:params [:id])
+         @post.title=params[:title]
+         @post.content=params[:content]
+         @post.save
+        redirect_to("/")
+        
         
     end
 end

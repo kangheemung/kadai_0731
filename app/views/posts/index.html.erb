@@ -9,13 +9,13 @@
             <%= f.submit "post" %>
         <% end %>
        
-       <% @posts.each do |post| %>
-        <li><a href='posts/:id/:edit'> <%= post.title %>を編集|</a>
-         
-        <% end %>
-        <% @users.each do |user| %>
-        <%= user.email %></li>
-        <% end %>
+        <% @posts.each do |post| %>
+       <li> <%=link_to(@post.title "を投稿|","/posts/#{@post.id}/edit")%></a>
+     
+        
+        </li>
+        
+       <% end %>
         
 
     <% else %>

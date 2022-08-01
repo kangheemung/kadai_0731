@@ -1,8 +1,7 @@
  
-        <%= form_for @post,url "/posts/update" %>
-            <%= f.label :title%>
-            <%= f.text_field :title %>
-            <%= f.label :content%>
-            <%= f.password_field :content %>
-            <%= f.submit "編集" %>
-        <% end %>
+        <div >
+        <input type="text" name="title"><%=@post.title　%>
+        <textarea name="content"><%= @post.content %></textarea>
+        <input type="submit" value="編集">
+      </div>
+   
