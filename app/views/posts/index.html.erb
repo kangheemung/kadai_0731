@@ -10,9 +10,7 @@
         <% end %>
       <% @posts.each do |post| %>
 　　　<p><%=link_to post.title , '/posts/#{post.id}/edit'%></p>
-      
-　　
-      <% end %>
+     <% end %>
     <% else %>
     <a href="/sessions/new">ログインしてください。</a>
     <% end %>

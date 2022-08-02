@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   
   #編集
   get 'posts/:id/edit'=>'posts#edit'
-  post 'posts/:id/update'=>'posts#update'
+  patch 'posts/:id/update'=>'posts#update'
   #ログイン
   get 'sessions/new'=>'sessions#new'
   post 'sessions/create'=>'sessions#create' 

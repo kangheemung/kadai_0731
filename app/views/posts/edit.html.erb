@@ -1,4 +1,4 @@
- 
+ <%= form_tag ("/posts/#{@post.id}/update") do %> 
         <div >
         <input type="text" name="title"><%=@post.title　%>
         <textarea name="content"><%= @post.content %></textarea>
