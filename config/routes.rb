@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   post 'posts/create'=>'posts#create'
   
   #編集
-  get 'posts/:id/:edit'=>'posts#edit'
-  post 'posts/:id/:update'=>'posts#update'
+  get 'posts/:id/edit'=>'posts#edit'
+  post 'posts/:id/update'=>'posts#update'
   #ログイン
   get 'sessions/new'=>'sessions#new'
   post 'sessions/create'=>'sessions#create' 

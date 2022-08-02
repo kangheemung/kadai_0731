@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
     def index
       @posts = Post.all
+       @post = Post.new
      
     end
   
     def new
-      @post = Post.new
+
     end
   
     def create
@@ -17,24 +18,19 @@ class PostsController < ApplicationController
           )
            
           
-        if @post.save
+    if @post.save
             redirect_to'/'
            
-        else
+    else
            render 'new'
-        end
+    end
     end
      def edit
-      
-      @post = Post.find_by(params[:id])
+        @post = Post.find_by(params[:title])
+        @post = Post.find_by(params[:content])
      end
+    
     def update
-         @post=Post.find_by(id:params [:id])
-         @post.title=params[:title]
-         @post.content=params[:content]
-         @post.save
-        redirect_to("/")
-        
-        
+          redirect_to("/")
     end
 end
