@@ -9,7 +9,7 @@
             <%= f.submit "post" %>
         <% end %>
       <% @posts.each do |post| %>
-　　　<p><%=link_to post.title , '/posts/#{post.id}/edit'%><%=link_to "を編集", '/posts/#{post.id}/edit'%></p>
+　　　<p><%=link_to post.title, '/posts/#{post.id}/edit'%><%=link_to "を編集", '/posts/#{post.id}/edit'%></p>
      <% end %>
     <% else %>
     <a href="/sessions/new">ログインしてください。</a>

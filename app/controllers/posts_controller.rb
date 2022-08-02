@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
     def index
-      @posts = Post.all
       @post = Post.new
-      @post = Post.find_by(params[:id])
+      @posts = Post.all
+      
      
     end
   
